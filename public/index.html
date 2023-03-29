@@ -64,7 +64,7 @@
 
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form method="POST" action="/tweets">
+      <form method="POST" id="new-tweet-form" action="/tweets">
         <label for="tweet-text" class="label-tweet">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="tweet-input-footer">
@@ -74,29 +74,10 @@
       </form>
     </section>
 
-    <article class="tweet-block">
-      <header>
-        <img src="https://api.dicebear.com/6.x/thumbs/svg?seed=Maggie" alt="avatar" />
-        <h2>Annie</h2>
-        <h5>@handle</h5>
-      </header>
-      <p>This is the content of the tweet.</p>
-      <hr>
-      <footer>
-        <h6>10 days ago</h6>
-        <div class="interactions">
-          <i class="icon fa-solid fa-flag"></i>
-          <i class="icon fa-solid fa-retweet" ></i>
-          <i class="icon fa-solid fa-heart"></i>
-        </div>
-      </footer>
-    </article>
+    <section id="tweet-container">
+    </section>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
-    <h1>HMY BACK HURTS</h1>
+
   </main>
 
 </body>

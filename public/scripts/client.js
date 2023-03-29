@@ -6,9 +6,23 @@
 $(document).ready(function() {
   renderTweets(data);
 
+  //event listener for the new tweet form
+  $("#new-tweet-form").submit(function(event) {
+    event.preventDefault();
+    //convert data into query string
+    let input = $(this).serialize();
+    console.log(input);
+
+    //submit (ajax) jquery post request to send data to the server
+    $.post('/tweets', input)
+      .then(() => {
+        console.log('tweet saved');
+      });
+
+  });
 
 })
- 
+
 const data = [
   {
     "user": {
@@ -26,7 +40,8 @@ const data = [
     "user": {
       "name": "Descartes",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
+      "handle": "@rd"
+    },
     "content": {
       "text": "Je pense , donc je suis"
     },
@@ -64,4 +79,7 @@ const renderTweets = function(tweets) {
     // takes return value and appends it to the tweets container
     $('#tweet-container').append(element);
   });
+}
+const loadTweets = function() {
+
 }

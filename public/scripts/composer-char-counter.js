@@ -16,13 +16,8 @@ $(document).ready(function() {
     const remainingChar = 140 - $(this).val().length;
     counter.val(remainingChar);
 
-
+    //change element color based on value
     counter.css('color', remainingChar < 0 ? 'red' : 'white');
-    /*  if (remainingChar < 0) {
-       counter.css("color", "red");
-     } else if (remainingChar >= 0) {
-       counter.css("color", "white");
-     } */
 
   });
 

@@ -31,6 +31,9 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
@@ -63,11 +66,14 @@
   <main class="container">
 
     <section class="new-tweet">
+      <div class='err-popup'>
+        <i class="fa-solid fa-triangle-exclamation" style="color: #ffffff;"></i>
+                Error
+      </div>
       <h2>Compose Tweet</h2>
       <form method="POST" id="new-tweet-form" action="/tweets">
         <label for="tweet-text" class="label-tweet">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
-        <textarea name="text2" id="tweet-text"></textarea>
         <div class="tweet-input-footer">
           <button type="submit" class="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
@@ -75,9 +81,9 @@
       </form>
     </section>
 
+
     <section id="tweet-container">
     </section>
-
 
   </main>
 

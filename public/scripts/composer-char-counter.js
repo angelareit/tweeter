@@ -9,7 +9,7 @@ $(document).ready(function() {
   $("#tweet-text").keyup(function() {
     //get this object count
     let textArea = $(this);
-    console.log(textArea.val(), textArea.val().length);
+
     //get counter object
     let counter = textArea.next().find('output');
     //assign the value

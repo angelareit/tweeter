@@ -4,20 +4,36 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function() {
-  renderTweets(data);
+  loadTweets();
 
   //event listener for the new tweet form
   $("#new-tweet-form").submit(function(event) {
     event.preventDefault();
+
     //convert data into query string
     let input = $(this).serialize();
-    console.log(input);
 
-    //submit (ajax) jquery post request to send data to the server
-    $.post('/tweets', input)
-      .then(() => {
-        console.log('tweet saved');
+    $( ".err-popup" ).slideUp(100, function() {});
+
+    //access the target element for more accurate comparison
+    let tweetVal = $("#tweet-text").val();
+    if (tweetVal.length <= 140 && tweetVal.length > 0) {
+      //submit (ajax) jquery post request to send data to the server
+      $.post('/tweets', input)
+        .then(() => {
+          console.log('tweet saved');
+          getNewTweet();
+        });
+
+    }
+    else {
+      $( ".err-popup" ).slideDown(200, function() {
+        $( this )
+        .css( "visibility", "visible" )
+       //$( ".popup" ).css( "visibility", "hidden" );
       });
+      //alert('NO, TRY AGAIN');
+    }
 
   });
 
@@ -50,17 +66,19 @@ const data = [
 ];
 
 function createTweetElement(data) {
+  const time = timeago.format(data.created_at, 'en_US');
+
   const element =
     `<article class="tweet-block">
      <header>
        <img src="${data.user.avatars}" alt="avatar" />
        <h2>${data.user.name}</h2>
-       <h5>${data.user.hanle}</h5>
+       <h5>${data.user.handle}</h5>
      </header>
-     <p>${data.content.text}</p>
+     <p>${safeText(data.content.text)}</p>
      <hr>
      <footer>
-       <h6>${data.created_at}</h6>
+       <h6>${time}</h6>
        <div class="interactions">
          <i class="icon fa-solid fa-flag"></i>
          <i class="icon fa-solid fa-retweet" ></i>
@@ -76,10 +94,42 @@ const renderTweets = function(tweets) {
   tweets.forEach(tweet => {
     // calls createTweetElement for each tweet
     const element = createTweetElement(tweet);
-    // takes return value and appends it to the tweets container
-    $('#tweet-container').append(element);
+    // takes return value and adds it on top of the tweets container
+    $('#tweet-container').prepend(element);
   });
 }
-const loadTweets = function() {
 
+const loadTweets = function() {
+  //pull data from server and display them with the format
+  $.get('/tweets')
+    .then(data => {
+      renderTweets(data);
+    });
 }
+
+//inserts the new tweet block in the container
+const displayNewTweet = function(data) {
+  const element = createTweetElement(data);
+  $('#tweet-container').prepend(element);
+}
+
+const getNewTweet = function() {
+  //reset textarea in the HTML and counter
+  const textArea = $("#tweet-text");
+  textArea.val('');
+  const counter = textArea.next().find('output');
+  counter.val(140);
+
+  //display recent post at the top
+  $.get('/tweets')
+    .then(data => {
+      console.log(data[data.length - 1]);
+      displayNewTweet(data[data.length - 1]);
+    });
+}
+
+const safeText = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};

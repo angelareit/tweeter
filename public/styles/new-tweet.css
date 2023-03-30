@@ -1,21 +1,22 @@
 .new-tweet {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: stretch;
   font-family: 'Bungee', cursive;
-  color: white;
-  margin: 50px 0px 50px 0px;
-
+  color: #212120;
+  margin: 30px 0px 50px 0px;
 }
 
 #tweet-text {
   outline: 0;
   border-width: 0 0 5px;
   background-color: transparent;
-  border-color: #f5f1e4;
+  border-color: #212120;
   width: 100%;
   resize: none;
   line-height: inherit;
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .tweet-input-footer {
@@ -31,23 +32,36 @@
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+  font-family: 'Bungee', cursive;
+
 }
 
 .counter {
   padding: 9px 12px;
+  color: #2121209f;
 }
 
-.label-tweet {
+.label-tweet h3{
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
+  margin-top: 0px;
+  margin-bottom: 40px;
 }
 
+
 .err-popup{
-  visibility: hidden;
+  display: none;
   border-width: 5px;
-  border-color:red;
+  border-color: rgba(245, 23, 23, 0.65);
   outline: 10px;
+  color: rgba(245, 23, 23, 0.65);
   border-style: solid;
   padding: 5px 10px 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: rgba(255, 0, 0, 0.15);
+}
+.err-popup i{
+  margin: 5px;
+  color: rgba(245, 23, 23, 0.65);
 }

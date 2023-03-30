@@ -17,7 +17,7 @@ $(document).ready(function() {
     counter.val(remainingChar);
 
     //change element color based on value
-    counter.css('color', remainingChar < 0 ? 'red' : 'white');
+    counter.css('color', remainingChar < 0 ? 'rgba(235, 8, 8, 0.85)' : ' #2121209f');
 
   });
 

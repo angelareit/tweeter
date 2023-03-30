@@ -1,10 +1,17 @@
 .header {
-  height: 520px;
+  height: 540px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
-  background-color: #1d55a3;
-  background-image: url("https://www.transparenttextures.com/patterns/exclusive-paper.png");
+  background-color:#733333;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  padding: 30px;
+}
+
+.header h2 {
+  color: white;
+  text-shadow: 4px 3px 0 #5a5241;
+    margin: 10px;
 }

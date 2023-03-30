@@ -9,6 +9,7 @@ nav {
   justify-items: center;
   position: fixed;
   width: 100%;
+  box-shadow: 0px 0px 10px rgba(93, 93, 93, 0.68);
 
 
 }
@@ -19,12 +20,28 @@ nav span {
   justify-items: center;
 }
 
-.right-nav {
+.write-new-tweet {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
+  margin: 5px;
+}
+.write-new-tweet:hover {
+  outline: 2px solid #c8e9ffcb;
+  outline-offset: 0px;
+  background-color: rgba(151, 206, 255, 0.1);
 }
 
 .no-margin{
   margin: 0 0 4px 0;
+}
+
+#back-top
+{
+  display: none;
+  position:fixed;
+  bottom:40px;
+	right:40px;
+  color: red;
 }

@@ -6,6 +6,42 @@
 $(document).ready(function() {
   loadTweets();
 
+  //detect scroll
+  $(window).scroll(function() {
+
+    var height = $(window).scrollTop();
+
+    if (height > 350) {
+      console.log('peekaboo');
+      $("nav").fadeOut(200);
+      $("#back-top").fadeIn(200, function() { });
+    }
+    else {
+      $("nav").fadeIn(200);
+      $("#back-top").fadeOut(200, function() { });
+    }
+
+  });
+
+  $("#back-top").click(function(event) {
+    event.preventDefault();
+
+    window.scrollTo(0, 0);
+
+
+  });
+
+
+  //catch clicks on write tweet button
+  $(".write-new-tweet").click(function(event) {
+    event.preventDefault();
+
+   // $("h2").effect("bounce", { times: 3 }, 300);
+    $(".new-tweet").toggle(200, function() {});
+
+  });
+
+
   //event listener for the new tweet form
   $("#new-tweet-form").submit(function(event) {
     event.preventDefault();
@@ -13,7 +49,7 @@ $(document).ready(function() {
     //convert data into query string
     let input = $(this).serialize();
 
-    $( ".err-popup" ).slideUp(100, function() {});
+    $(".err-popup").slideUp(100, function() { });
 
     //access the target element for more accurate comparison
     let tweetVal = $("#tweet-text").val();
@@ -27,10 +63,11 @@ $(document).ready(function() {
 
     }
     else {
-      $( ".err-popup" ).slideDown(200, function() {
-        $( this )
-        .css( "visibility", "visible" )
-       //$( ".popup" ).css( "visibility", "hidden" );
+      $(".err-popup").slideDown(200, function() {
+        $(this)
+          .css("visibility", "visible")
+          .val('OVERRIDE')
+        //$( ".popup" ).css( "visibility", "hidden" );
       });
       //alert('NO, TRY AGAIN');
     }
@@ -128,7 +165,7 @@ const getNewTweet = function() {
     });
 }
 
-const safeText = function (str) {
+const safeText = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;

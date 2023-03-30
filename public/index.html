@@ -45,7 +45,7 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <div class="right-nav">
+    <div class="write-new-tweet">
       <p class="no-margin"> <b>Write </b>a new Tweet</p>
       <i class="fa-solid fa-angles-down"></i>
     </div>
@@ -58,7 +58,7 @@
     </div>
     <br>
     <div>
-      <h2>Angela</h2>
+      <h2>Angela Rei</h2>
     </div>
   </header>
 
@@ -67,12 +67,14 @@
 
     <section class="new-tweet">
       <div class='err-popup'>
-        <i class="fa-solid fa-triangle-exclamation" style="color: #ffffff;"></i>
-                Error
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        Error!
       </div>
       <h2>Compose Tweet</h2>
       <form method="POST" id="new-tweet-form" action="/tweets">
-        <label for="tweet-text" class="label-tweet">What are you humming about?</label>
+        <label for="tweet-text" class="label-tweet">
+          <h3>What are you humming about?<h3>
+        </label>
         <textarea name="text" id="tweet-text"></textarea>
         <div class="tweet-input-footer">
           <button type="submit" class="submit">Tweet</button>
@@ -81,10 +83,10 @@
       </form>
     </section>
 
-
     <section id="tweet-container">
     </section>
 
+    <div id="back-top"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></div>
   </main>
 
 </body>

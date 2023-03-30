@@ -2,9 +2,6 @@ $(document).ready(function() {
   // --- our code goes here ---
   console.log('READY SIR');
 
-  //let textArea = $("#tweet-text");
-
-
   //register char input on #twee-text text area
   $("#tweet-text").keyup(function() {
     //get this object count
@@ -18,7 +15,8 @@ $(document).ready(function() {
 
     //change element color based on value
     counter.css('color', remainingChar < 0 ? 'rgba(235, 8, 8, 0.85)' : ' #2121209f');
-
+    textArea
+    
   });
 
   $("#btn").on('click', function() {

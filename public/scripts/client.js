@@ -3,16 +3,16 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(function() {
   loadTweets();
 
   //detect scroll
   $(window).scroll(function() {
-
+    //get current vertical position
     var height = $(window).scrollTop();
 
     if (height > 350) {
-      console.log('peekaboo');
       $("nav").fadeOut(200);
       $("#back-top").fadeIn(200, function() { });
     }
@@ -23,11 +23,11 @@ $(document).ready(function() {
 
   });
 
+  //catch clicks on scroll to top and scroll up
   $("#back-top").click(function(event) {
     event.preventDefault();
 
     window.scrollTo(0, 0);
-
 
   });
 
@@ -36,8 +36,8 @@ $(document).ready(function() {
   $(".write-new-tweet").click(function(event) {
     event.preventDefault();
 
-   // $("h2").effect("bounce", { times: 3 }, 300);
-    $(".new-tweet").toggle(200, function() {});
+    // $("h2").effect("bounce", { times: 3 }, 300);
+    $(".new-tweet").toggle(200, function() { });
 
   });
 
@@ -62,14 +62,21 @@ $(document).ready(function() {
         });
 
     }
+    else if (tweetVal.length > 140) {
+      $(".err-popup").slideDown(200, function() {
+        $(this)
+          .empty()
+          .append(`<i class="fa-solid fa-triangle-exclamation"></i>
+          Error: Maximum character limit reached!`);
+      });
+    }
     else {
       $(".err-popup").slideDown(200, function() {
         $(this)
-          .css("visibility", "visible")
-          .val('OVERRIDE')
-        //$( ".popup" ).css( "visibility", "hidden" );
+          .empty()
+          .append(`<i class="fa-solid fa-triangle-exclamation"></i>
+          Error: Cannot send an empty tweet!`);
       });
-      //alert('NO, TRY AGAIN');
     }
 
   });
@@ -102,6 +109,7 @@ const data = [
   }
 ];
 
+//creates a HTML string literal tweet block for input data
 function createTweetElement(data) {
   const time = timeago.format(data.created_at, 'en_US');
 
@@ -126,6 +134,7 @@ function createTweetElement(data) {
   return element;
 }
 
+//convert exsisting tweet data to html for rendering
 const renderTweets = function(tweets) {
   // loops through tweets
   tweets.forEach(tweet => {
@@ -136,6 +145,7 @@ const renderTweets = function(tweets) {
   });
 }
 
+//pull all exsisting tweet data in the server
 const loadTweets = function() {
   //pull data from server and display them with the format
   $.get('/tweets')
@@ -144,12 +154,13 @@ const loadTweets = function() {
     });
 }
 
-//inserts the new tweet block in the container
+//insert the new tweet block in the html container
 const displayNewTweet = function(data) {
   const element = createTweetElement(data);
   $('#tweet-container').prepend(element);
 }
 
+//fetch newest tweet data, display it, and clear text field
 const getNewTweet = function() {
   //reset textarea in the HTML and counter
   const textArea = $("#tweet-text");
@@ -165,6 +176,7 @@ const getNewTweet = function() {
     });
 }
 
+//escape function to prevent xss
 const safeText = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));

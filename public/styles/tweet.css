@@ -12,7 +12,7 @@
 }
 
 .tweet-block:hover {
-  box-shadow: 10px 10px rgba(252, 193, 43, 0.618);
+  box-shadow: 10px 10px rgba(222, 116, 116, 0.6);
 /*   margin: 15px 0px 20px 0px; */
 
 }
@@ -72,10 +72,11 @@ article.tweet-block h6 {
 }
 
 .icon:hover {
-  color: rgb(240, 81, 53);
+  color: rgb(222, 116, 116);
   margin: 3px;
 }
 
 article.tweet-block p {
   margin: 30px 10px 30px 10px;
+  overflow-wrap: break-word;
 }

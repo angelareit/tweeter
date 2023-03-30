@@ -39,6 +39,7 @@
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
+  
 </head>
 
 <body>
@@ -47,14 +48,14 @@
     <span>tweeter</span>
     <div class="write-new-tweet">
       <p class="no-margin"> <b>Write </b>a new Tweet</p>
-      <i class="fa-solid fa-angles-down"></i>
+      <i class="fa-solid fa-angles-down fa-bounce"></i>
     </div>
   </nav>
 
   <!--Header -->
   <header class="header">
     <div>
-      <img src="/images/profile-hex.png">
+      <img class='profile-pic' src="/images/profile-hex.png">
     </div>
     <br>
     <div>
@@ -67,8 +68,6 @@
 
     <section class="new-tweet">
       <div class='err-popup'>
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        Error!
       </div>
       <h2>Compose Tweet</h2>
       <form method="POST" id="new-tweet-form" action="/tweets">
@@ -86,7 +85,7 @@
     <section id="tweet-container">
     </section>
 
-    <div id="back-top"><i class="fa-solid fa-circle-arrow-up fa-2xl"></i></div>
+    <div id="back-top"><i class="fa-solid fa-circle-arrow-up fa-2xl fa-bounce"></i></div>
   </main>
 
 </body>

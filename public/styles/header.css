@@ -2,16 +2,33 @@
   height: 540px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color:#733333;
-  background-image: url("https://www.transparenttextures.com/patterns/food.png");
-  padding: 30px;
+  background-color: #de5752;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  padding: 180px 50px 50px 50px;
 }
 
 .header h2 {
   color: white;
   text-shadow: 4px 3px 0 #5a5241;
-    margin: 10px;
+  margin: 10px;
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .header {
+    width: 33.3%;
+    max-width: 450px;
+    min-width: 150px;
+    margin: 150px 0px 50px 50px;
+    align-self: start;
+    padding: 50px;
+    border-radius: 30px;
+  }
+
+  .profile-pic img{
+    min-width:95px;
+  }
 }

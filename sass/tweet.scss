@@ -1,0 +1,86 @@
+@use 'theme';
+
+.tweet-block {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  outline: 10px;
+  border-width: 5px;
+  border-color: #212120;
+  width: 100%;
+  padding: 15px;
+  @include theme.vertical-symmetrical-margin($value: 35px)
+}
+
+.tweet-block:hover {
+  box-shadow: 10px 10px rgba(222, 116, 116, 0.6);
+}
+
+article.tweet-block {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include theme.horizontal-symmetrical-margin($value: 10px);
+  }
+
+  img {
+    width: 80px;
+    margin: 10px;
+  }
+
+  hr {
+    border: 3px solid #212120;
+    ;
+    @include theme.horizontal-symmetrical-margin($value: 0px);
+  }
+
+  div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: larger;
+    @include theme.horizontal-symmetrical-margin($value: 10px);
+  }
+
+  h5 {
+    font-weight: bold;
+    color: rgba(60, 53, 53, 0.55);
+    @include theme.horizontal-symmetrical-margin($value: 20px);
+  }
+
+  h6 {
+    margin: 0px;
+  }
+
+  p {
+    @include theme.symmetrical-margin($h-value: 10px, $v-value: 30px);
+    overflow-wrap: break-word;
+  }
+
+  .interactions {
+    margin: 0;
+  }
+
+  .icon {
+    color: #212120;
+    margin: 3px;
+  }
+
+  .icon:hover {
+    color: rgb(222, 116, 116);
+    margin: 3px;
+  }
+
+}

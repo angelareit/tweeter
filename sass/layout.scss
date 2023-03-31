@@ -1,7 +1,4 @@
-body, main {
-  background-color: #ffffff;
-  background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
-}
+@use 'theme';
 
 html {
   box-sizing: border-box;
@@ -16,14 +13,17 @@ html {
 /*
  * Global layout stuff
  */
+
+
 body {
   color: #212120;
   font-size: 24px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: theme.$font-family-regular;
   margin: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
+  @extend %white-background;
 }
 
 main {
@@ -32,6 +32,7 @@ main {
   align-items: center;
   flex-direction: column;
   background-color: #ffffff;
+  @extend %white-background;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -40,6 +41,7 @@ main {
     align-self: start;
     justify-content: center;
   }
+
   main {
     width: 60%;
     align-items: center;

@@ -1,7 +1,4 @@
-.header {
-  background-color: #de5752;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-}
+@use 'theme';
 
 .header {
   height: 540px;
@@ -11,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   padding: 180px 50px 50px 50px;
+  @extend %profile-background;
 }
 
 .header h2 {
@@ -30,7 +28,8 @@
     margin: 150px 0px 50px 50px;
     padding: 50px;
   }
-  .profile-pic img {
-    min-width: 95px;
+
+  .profile-pic img{
+    min-width:95px;
   }
 }

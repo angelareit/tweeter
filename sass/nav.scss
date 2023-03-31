@@ -1,7 +1,4 @@
-nav {
-  background-color: #de5752;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-}
+@use 'theme';
 
 nav {
   height: 120px;
@@ -14,27 +11,33 @@ nav {
   justify-items: center;
   position: fixed;
   width: 100%;
-}
-nav span {
-  display: flex;
-  font-family: "Bungee", cursive;
-  justify-items: center;
-}
-nav .write-new-tweet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  margin: 5px;
-}
-nav .write-new-tweet:hover {
-  background-color: rgba(255, 255, 255, 0.4470588235);
-  color: #ffffff;
-  border-radius: 20px;
-  padding: 10px;
-}
-nav .no-margin {
-  margin: 0 0 4px 0;
+  @extend %profile-background;
+
+  span {
+    display: flex;
+    font-family: theme.$font-family-title;
+    justify-items: center;
+  }
+
+  .write-new-tweet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .write-new-tweet:hover {
+    background-color: #ffffff72;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 10px
+  }
+
+  .no-margin {
+    margin: 0 0 4px 0;
+  }
+
 }
 
 #back-top {
@@ -57,3 +60,4 @@ nav .no-margin {
     box-shadow: 0px 0px 10px rgba(93, 93, 93, 0.68);
   }
 }
+

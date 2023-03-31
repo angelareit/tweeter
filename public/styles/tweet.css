@@ -1,82 +1,77 @@
 .tweet-block {
   display: flex;
   flex-direction: column;
-  outline: 10px;
   border-style: solid;
+  outline: 10px;
   border-width: 5px;
-  background-color: transparent;
   border-color: #212120;
   width: 100%;
   padding: 15px;
-  margin: 35px 0px 35px 0px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 
 .tweet-block:hover {
   box-shadow: 10px 10px rgba(222, 116, 116, 0.6);
-/*   margin: 15px 0px 20px 0px; */
-
 }
 
 article.tweet-block header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
-
-article.tweet-block img {
-  width: 80px;
-  margin: 10px;
-}
-article.tweet-block h2 {
-  margin: 0px 5px 0px 5px;
-  font-weight: 400;
-  font-size: larger
-}
-
 article.tweet-block footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 10px 0px 10px;
-
-
+  margin-left: 10px;
+  margin-right: 10px;
 }
-
+article.tweet-block img {
+  width: 80px;
+  margin: 10px;
+}
 article.tweet-block hr {
-  /*   margin: 15; */
-  border: 3px solid #212120;;
-  margin-left: 0;
-  margin-right: 0;
+  border: 3px solid #212120;
+  margin-left: 0px;
+  margin-right: 0px;
 }
-
-article.tweet-block .interactions {
-  margin: 0;
+article.tweet-block div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-
-
+article.tweet-block h2 {
+  font-weight: 400;
+  font-size: larger;
+  margin-left: 10px;
+  margin-right: 10px;
+}
 article.tweet-block h5 {
-  margin: 0px 20px 0px 20px;
   font-weight: bold;
-  align-items: end;
-  margin-left: auto;
   color: rgba(60, 53, 53, 0.55);
+  margin-left: 20px;
+  margin-right: 20px;
 }
-
 article.tweet-block h6 {
   margin: 0px;
 }
-
-.icon {
+article.tweet-block p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow-wrap: break-word;
+}
+article.tweet-block .interactions {
+  margin: 0;
+}
+article.tweet-block .icon {
   color: #212120;
   margin: 3px;
 }
-
-.icon:hover {
+article.tweet-block .icon:hover {
   color: rgb(222, 116, 116);
   margin: 3px;
-}
-
-article.tweet-block p {
-  margin: 30px 10px 30px 10px;
-  overflow-wrap: break-word;
 }

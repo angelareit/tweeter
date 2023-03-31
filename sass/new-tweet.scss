@@ -1,8 +1,10 @@
+@use 'theme';
+
 .new-tweet {
   display: none;
   flex-direction: column;
   justify-content: stretch;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
   color: #212120;
   margin: 30px 0px 50px 0px;
 }
@@ -16,7 +18,7 @@
   resize: vertical;
   line-height: inherit;
   font-weight: 400;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .tweet-input-footer {
@@ -32,22 +34,24 @@
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
-  font-family: "Bungee", cursive;
+  font-family: 'Bungee', cursive;
+
 }
 
 .counter {
   padding: 9px 12px;
-  color: rgba(33, 33, 32, 0.6235294118);
+  color: #2121209f;
 }
 
-.label-tweet h3 {
-  font-family: "Source Sans Pro", sans-serif;
+.label-tweet h3{
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 700;
   margin-top: 0px;
   margin-bottom: 40px;
 }
 
-.err-popup {
+
+.err-popup{
   display: none;
   border-width: 5px;
   border-color: rgba(245, 23, 23, 0.65);
@@ -59,8 +63,7 @@
   margin-bottom: 10px;
   background-color: rgba(255, 0, 0, 0.15);
 }
-
-.err-popup i {
+.err-popup i{
   margin: 5px;
   color: rgba(245, 23, 23, 0.65);
 }

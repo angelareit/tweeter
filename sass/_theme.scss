@@ -1,0 +1,30 @@
+$font-family-regular: 'Source Sans Pro', sans-serif;
+$font-family-title: 'Bungee', cursive;
+$side-symmetrical-margin: 0px 50px 0px 50px;
+
+@mixin horizontal-symmetrical-margin($value: 10px) {
+  margin-left: $value ;
+  margin-right: $value;
+}
+
+@mixin vertical-symmetrical-margin($value: 10px) {
+  margin-top: $value ;
+  margin-bottom: $value;
+}
+
+@mixin symmetrical-margin($h-value: 10px, $v-value:10px) {
+  margin-top: $v-value;
+  margin-bottom: $v-value;
+  margin-left: $h-value ;
+  margin-right: $h-value;
+}
+
+%white-background {
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+}
+
+%profile-background {
+  background-color: #de5752;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+}

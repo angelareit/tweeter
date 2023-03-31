@@ -116,8 +116,10 @@ function createTweetElement(data) {
   const element =
     `<article class="tweet-block">
      <header>
+      <div>
        <img src="${data.user.avatars}" alt="avatar" />
        <h2>${data.user.name}</h2>
+      </div> 
        <h5>${data.user.handle}</h5>
      </header>
      <p>${safeText(data.content.text)}</p>

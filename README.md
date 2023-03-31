@@ -4,13 +4,15 @@ Tweeter is a simple, single-page Twitter clone.
 This project is a practice for HTML, CSS, JS, jQuery and AJAX **front-end** skills, and their Node, Express back-end skills.
 
 
-##Screenshots
+## Screenshots
 ![Desktop View](https://user-images.githubusercontent.com/43653051/228999692-9b1c7ce8-c8ca-4f14-b58b-8f6280c39342.png)
+### Desktop View
 ![Mobile/Tablet View](https://user-images.githubusercontent.com/43653051/229000032-9f744d46-5823-492d-ae70-a908b2b699f4.png)
+### Mobile/Tablet View
 ![Invalid Tweet Error](https://user-images.githubusercontent.com/43653051/229000096-d4424e73-a0cb-48d5-bb0b-fdec7b58bd11.png)
+### Invalid Tweet Error
 
-
-#How to Use
+## How to Use
 1. Clone your repository onto your local device.
 2. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
